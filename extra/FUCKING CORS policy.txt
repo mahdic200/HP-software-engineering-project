@@ -1,0 +1,13 @@
+if you are receiving fucking mother fucker CORS fucking policy
+
+attention to fucking "/" please care about god damn slash , ok ? 
+
+if you are trying to get a public file like image from javascript 
+
+you will receive this error , if you are trying to get access to public files
+
+javascript you will receive this error .
+
+please care about god damn slashes ok ? 
+
+you MUST PAY ATTENTION to slashes in end of url , it will cause CORS policy

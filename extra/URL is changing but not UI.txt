@@ -1,0 +1,30 @@
+it relates to react-router-dom functionality , react-router-dom
+
+has a match making pattern that dynamically compares two previous URL and 
+
+current url , it does not consider route parameter
+
+it does not compare FULL-URLs , so according to this article 
+
+you must give router parameters with useParams()
+
+and then give your router parameter to useEffect() second argument array
+
+like this :
+
+const { courseId } = useParams();
+
+
+useEffect(() => {
+
+}, [courseId]);
+
+
+with this code , when router parameter changes , react will figure out 
+
+that some change is occurred and your page will be re-rendered
+
+problem solved !!!
+
+and according to my programming way !!! in routes like this , 
+please do not implement 'fetched' logic , it will cause the discussed problem !!

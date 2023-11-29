@@ -1,0 +1,42 @@
+@import "./assets/font/font.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rtl {
+    direction: rtl;
+}
+
+:root {
+    --prim: #FFF5C2;
+    --second: #F4F27E;
+    --third: #6DB9EF;
+    --forth: #3081D0;
+}
+
+@layer components {
+    .btn-success {
+        @apply !bg-sky-400 p-3 rounded-md mx-1 text-white hover:!bg-sky-500;
+    }
+    .btn-danger {
+        @apply !bg-rose-400 p-3 rounded-md mx-1 text-white hover:!bg-rose-500;
+    }
+
+    .bg-prim {
+        @apply bg-[var(--prim)];
+    }
+    .bg-second {
+        @apply bg-[var(--second)];
+    }
+    .bg-third {
+        @apply bg-[var(--third)];
+    }
+    .bg-forth {
+        @apply bg-[var(--forth)];
+    }
+    
+    body {
+        @apply bg-prim
+        min-h-[100vh];
+    }
+}

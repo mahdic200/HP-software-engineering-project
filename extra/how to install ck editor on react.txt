@@ -1,0 +1,5 @@
+first go to documentation
+then go on build from source 
+then make your custom class extending the CKeditorClass
+and them give its options
+and in sidebar give your toolbar options

@@ -1,0 +1,7 @@
+it will send you a date time object (standard javascript Date class instance)
+
+and then you can use getTime() method to store unix timeStamp on your database
+
+(date: any) => {
+    date.toDate()
+}
