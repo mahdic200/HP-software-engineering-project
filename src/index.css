@@ -37,6 +37,8 @@
     
     body {
         @apply bg-prim
+        rtl
+        font-[IranSans]
         min-h-[100vh];
     }
 }

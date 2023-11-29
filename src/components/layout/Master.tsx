@@ -6,11 +6,11 @@ function Master() {
     return (
         <>
             <header className="h-[4rem] text-[var(--second)] bg-[var(--third)] px-2 bg-prim flex justify-between items-center">
-                <section></section>
                 <section>
-                    جعبه ابزار
                     <FontAwesomeIcon className="ml-1" icon={faBox} />
+                    جعبه ابزار
                 </section>
+                <section></section>
             </header>
             <main>
                 <Outlet />
