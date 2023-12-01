@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Bmi from "@/pages/Bmi";
 import About from "@/pages/About";
 import Help from "@/pages/Help";
+import Date from "@/pages/DateTransform";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "help",
                 element: <Help />
+            },
+            {
+                path: "date",
+                element: <Date />
             },
         ],
     }
