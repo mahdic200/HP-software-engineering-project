@@ -7,6 +7,8 @@ import './index.css'
 
 // routes pages
 import router from './routes/Router';
+import applyCustomErrorMap from "./utils/ZodErrormap";
+applyCustomErrorMap();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>

@@ -1,4 +1,5 @@
 const Routes = {
+    home: "",
     bmi: "bmi",
     calc: "calc",
     about: "about",
