@@ -1,4 +1,7 @@
+import { setDocTitle } from "@/utils/Helpers";
+
 function Time() {
+    setDocTitle("ساعت جهانی")
     return (
         <>
         <section className="flex justify-center items-center">

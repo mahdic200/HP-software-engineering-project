@@ -1,6 +1,7 @@
 const Routes = {
     home: "",
     notes: "notes",
+    todo: "todo",
     date: "date",
     time: "time",
     bmi: "bmi",

@@ -31,7 +31,7 @@ function Calculator() {
         <>
         <section className="flex justify-center items-center">
             <section className="w-[30%] flex flex-col rounded-lg bg-[var(--third)] gap-y-5 p-6">
-                <input type="text" className="w-full select-none text-[2rem] rounded-md focus:outline-none px-3 py-1" dir="ltr" value={phrase} />
+                <input type="text" className="w-full select-none text-[2rem] rounded-md focus:outline-none px-3 py-1" dir="ltr" value={phrase} onChange={() => {}} />
                 <section className="w-full grid grid-cols-4 gap-5">
                     <CBotton onClick={add}>+</CBotton>
                     <CBotton onClick={add}>3</CBotton>
