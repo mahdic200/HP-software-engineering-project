@@ -8,6 +8,7 @@ import Help from "@/pages/Help";
 import Date from "@/pages/DateTransform";
 import Notes from "@/pages/Notes";
 import Calculator from "@/pages/Calculator";
+import Time from "@/pages/Time";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: "date",
                 element: <Date />
+            },
+            {
+                path: "time",
+                element: <Time />
             },
             {
                 path: "notes",
