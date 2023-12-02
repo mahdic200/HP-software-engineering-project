@@ -2,7 +2,7 @@ import { setDocTitle } from "@/utils/Helpers";
 import GridSection from "@/components/GridSection";
 import Card from "@/components/Card";
 import Routes from "@/routes/Routes";
-import { faCalculator, faCalendar, faInfoCircle, faRuler } from "@fortawesome/free-solid-svg-icons";
+import { faCalculator, faCalendar, faInfoCircle, faNoteSticky, faRuler } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
     setDocTitle("خانه")
@@ -13,9 +13,9 @@ function Home() {
                 <GridSection>
                     <Card link={Routes.bmi} title="شاخص BMI" icon={faRuler} />
                     <Card link={Routes.date} title="تبدیل تاریخ" icon={faCalendar} />
+                    <Card link={Routes.notes} title="یادداشت" icon={faNoteSticky} />
                     <Card link={Routes.calc} title="ماشین حساب" icon={faCalculator} />
                     <Card link={Routes.calc} title="سایت خبری" icon={faCalculator} />
-                    <Card link={Routes.calc} title="یادداشت" icon={faCalculator} />
                     <Card link={Routes.calc} title="کرنومتر" icon={faCalculator} />
                     <Card link={Routes.calc} title="مساحت و حجم" icon={faCalculator} />
                     <Card link={Routes.calc} title="نقشه مترو" icon={faCalculator} />

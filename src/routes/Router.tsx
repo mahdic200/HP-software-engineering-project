@@ -6,6 +6,7 @@ import Bmi from "@/pages/Bmi";
 import About from "@/pages/About";
 import Help from "@/pages/Help";
 import Date from "@/pages/DateTransform";
+import Notes from "@/pages/Notes";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: "date",
                 element: <Date />
+            },
+            {
+                path: "notes",
+                element: <Notes />
             },
         ],
     }
