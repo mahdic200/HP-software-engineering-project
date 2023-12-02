@@ -7,6 +7,7 @@ import About from "@/pages/About";
 import Help from "@/pages/Help";
 import Date from "@/pages/DateTransform";
 import Notes from "@/pages/Notes";
+import Calculator from "@/pages/Calculator";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "calc",
-                element: <Bmi />
+                element: <Calculator />
             },
             {
                 path: "about",
