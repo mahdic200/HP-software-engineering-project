@@ -11,14 +11,16 @@ import { useState } from "react";
 function Area() {
 
     const [result, setResult] = useState<any>(null);
+    const [volume, setVolume] = useState<any>(null);
     const [type, setType] = useState<"1" | "2">("1");
 
     setDocTitle("مساحت");
 
     const schema = z.object({
         type: z.any(),
-        width: z.number().min(0),
+        width: z.number().min(0).or(z.nan()),
         height: z.number().min(0).or(z.nan()),
+        height2: z.number().min(0).or(z.nan()),
     });
 
     const { register, handleSubmit, formState } = useForm({
@@ -30,9 +32,11 @@ function Area() {
     const handleSave = (formValues: any) => {
         if (formValues.type == '1') {
             setResult(formValues.width * formValues.height);
+            setVolume(formValues.width * formValues.height * formValues.height2);
         }
         else if (formValues.type == '2') {
             setResult(Math.PI * (formValues.width ** 2))
+            setVolume((4/3) * Math.PI * (formValues.width ** 3))
         }
     }
     return (
@@ -62,9 +66,17 @@ function Area() {
                     </section>
                 </section>}
                 <section className="w-100 text-red-500">{(errors.height as any)?.message}</section>
+                {type == "1" && <section className="p-5 flex gap-x-5 items-center">
+                    <label htmlFor="height2">عرض</label>
+                    <section>
+                        <input id="height2" type="number" min={0} {...register("height2", { valueAsNumber: true })} className="rounded-md focus:outline-none px-3 py-1" />
+                    </section>
+                </section>}
+                <section className="w-100 text-red-500">{(errors.height2 as any)?.message}</section>
                 <button type="submit" className="mx-2 rounded-md px-3 py-2 bg-[var(--prim)]">ثبت</button>
                 <section className="p-5 flex justify-start gap-x-5 items-center">
-                    خروجی : {result}
+                    مساحت : {result}
+                    حجم : {volume}
                 </section>
             </form>
         </section>
