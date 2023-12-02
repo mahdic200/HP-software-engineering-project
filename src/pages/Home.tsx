@@ -2,7 +2,7 @@ import { setDocTitle } from "@/utils/Helpers";
 import GridSection from "@/components/GridSection";
 import Card from "@/components/Card";
 import Routes from "@/routes/Routes";
-import { faCalculator, faCalendar, faCheckSquare, faClock, faInfoCircle, faNoteSticky, faRuler } from "@fortawesome/free-solid-svg-icons";
+import { faCalculator, faCalendar, faCheckSquare, faClock, faInfoCircle, faNoteSticky, faRuler, faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
     setDocTitle("خانه")
@@ -17,7 +17,7 @@ function Home() {
                     <Card link={Routes.calc} title="ماشین حساب" icon={faCalculator} />
                     <Card link={Routes.time} title="ساعت جهانی" icon={faClock} />
                     <Card link={Routes.todo} title="رویداد نگار" icon={faCheckSquare} />
-                    <Card link={Routes.calc} title="کرنومتر" icon={faCalculator} />
+                    <Card link={Routes.stopwatch} title="کرنومتر" icon={faStopwatch} />
                     <Card link={Routes.calc} title="مساحت و حجم" icon={faCalculator} />
                     <Card link={Routes.calc} title="نقشه مترو" icon={faCalculator} />
                     <Card link={Routes.about} title="درباره ما" icon={faCalculator} />

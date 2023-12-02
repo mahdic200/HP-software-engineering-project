@@ -10,6 +10,7 @@ import Notes from "@/pages/Notes";
 import Calculator from "@/pages/Calculator";
 import Time from "@/pages/Time";
 import Todo from "@/pages/Todo";
+import Stopwatch from "@/pages/Stopwatch";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: "todo",
                 element: <Todo />
+            },
+            {
+                path: "stopwatch",
+                element: <Stopwatch />
             },
         ],
     }
