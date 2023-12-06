@@ -51,7 +51,7 @@ function Calculator() {
                     <CBotton onClick={add}>/</CBotton>
                     <CBotton onClick={() => {
                         if (phrase != "") {
-                            setPhrase(phrase.slice(0, -1));
+                            setPhrase((phrase) => phrase.slice(0, -1));
                         }
                     }}>C</CBotton>
                     <CBotton onClick={add}>0</CBotton>
@@ -61,11 +61,12 @@ function Calculator() {
                     <CBotton onClick={() => {
                         try {
                             toast.success(eval(phrase), { theme: "colored" });
-                            setPhrase(eval(phrase));
+                            setPhrase(eval(phrase)+"");
                         } catch (e) {
                             toast.error("عبارت درست وارد کنید", { theme: "colored" });
                         }
                     }}>=</CBotton>
+                    <CBotton onClick={add}>.</CBotton>
                 </section>
             </section>
         </section>
