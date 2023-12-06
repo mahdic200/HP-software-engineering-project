@@ -1,4 +1,9 @@
+import { setDocTitle } from "@/utils/Helpers";
+
 function About() {
+
+    setDocTitle("درباره ما")
+
     return (
         <>
         <section className="m-5 rounded-md p-4 bg-[var(--third)]">

@@ -12,6 +12,7 @@ import Time from "@/pages/Time";
 import Todo from "@/pages/Todo";
 import Stopwatch from "@/pages/Stopwatch";
 import Area from "@/pages/Area";
+import Metromap from "@/pages/Metromap";
 
 const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: "area",
                 element: <Area />
+            },
+            {
+                path: "metromap",
+                element: <Metromap />
             },
         ],
     }

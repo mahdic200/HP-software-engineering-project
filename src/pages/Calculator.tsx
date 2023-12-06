@@ -1,3 +1,4 @@
+import { setDocTitle } from "@/utils/Helpers";
 import { MouseEvent, ReactNode, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -20,6 +21,8 @@ function CBotton ({ children, onClick }: Props) {
 
 
 function Calculator() {
+
+    setDocTitle("درباره ما")
     const [phrase, setPhrase] = useState<string>("");
 
     const add = (e: MouseEvent) => {

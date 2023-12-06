@@ -1,6 +1,9 @@
+import { setDocTitle } from "@/utils/Helpers";
 import { useEffect, useState } from "react";
 
 function Stopwatch() {
+
+    setDocTitle("کرنومتر")
 
     const [time, setTime] = useState<number>(0);
     const [isActive, setIsActive] = useState<boolean>(false);

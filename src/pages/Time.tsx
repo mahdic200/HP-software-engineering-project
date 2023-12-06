@@ -2,12 +2,15 @@ import { setDocTitle } from "@/utils/Helpers";
 
 function Time() {
     setDocTitle("ساعت جهانی")
+
+    const date = new Date((new Date()).toUTCString());
     return (
         <>
         <section className="flex justify-center items-center">
             <section className="text-[3rem] text-[var(--prim)] flex flex-col justify-center items-center p-5 rounded-lg bg-[var(--third)]">
-                <p>{(new Date(Date.UTC((new Date()).getFullYear()))).toDateString()}</p>
-                <p>{(new Date(Date.UTC((new Date()).getFullYear()))).toLocaleTimeString()}</p>
+                <p>{date.getUTCFullYear() + "-" + date.getUTCMonth() + "-" + date.getUTCDay()}</p>
+                <p>{date.getUTCHours()+":"+date.getUTCMinutes()+":"+date.getUTCSeconds()}</p>
+                <p>{date.toUTCString()}</p>
             </section>
         </section>
         </>
