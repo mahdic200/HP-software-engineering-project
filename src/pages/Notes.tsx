@@ -4,8 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { setDocTitle } from "@/utils/Helpers";
 import { Children, useState } from "react";
-import { getLocalItem, setLocalItem } from "@/utils/LocalStorage";
-import { isEmpty } from "@/utils/Empty";
 import NoteInterface from "@/interfaces/NoteInterface";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +11,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function Notes() {
 
-    const [notes, setNotes] = useState<NoteInterface[] | null>(isEmpty(getLocalItem("notes", true)) ? [] : getLocalItem("notes", true));
+    const [notes, setNotes] = useState<NoteInterface[]>([]);
 
     setDocTitle("دفترچه یادداشت");
 
@@ -28,15 +26,13 @@ function Notes() {
     const { errors } = formState;
 
     const handleSave = (formValues: any) => {
-        let notes_object: NoteInterface[] = JSON.parse(localStorage.getItem("notes")!);
-        notes_object = isEmpty(notes_object) ? [] : notes_object;
+        let notes_array = notes;
         let id = getRandomInt(1000, 100000);
-        notes_object.push({
+        notes_array.push({
             id: id + "",
             body: formValues.body
         });
-        localStorage.setItem("notes", JSON.stringify(notes_object))
-        setNotes(notes_object);
+        setNotes(notes_array);
     }
 
     const getRandomInt = (min: number, max: number) => {
@@ -45,16 +41,12 @@ function Notes() {
         return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
     }
 
-    const delete_note = (number: string) => {
-        let notes_object = notes?.filter((note) => {
-            return note.id !== number;
+    const delete_note = (id: string) => {
+        let notes_array = notes.filter((note) => {
+            return note.id !== id;
         });
-        setLocalItem("notes", notes_object, true)
-        if (isEmpty(notes_object)) {
-            localStorage.removeItem('notes');
-        }
-        notes_object = notes_object == undefined ? [] : notes_object;
-        setNotes(notes_object);
+        notes_array = notes_array == null ? [] : notes_array;
+        setNotes(notes_array);
     }
 
     return (
@@ -72,7 +64,7 @@ function Notes() {
                 </form>
             </section>
             <section className="flex flex-col items-center gap-y-2 mt-5">
-                {notes !== null && notes.length !== 0 && Children.toArray(Object.values(notes).map((note) => {
+                {notes !== null && notes.length !== 0 && Children.toArray(notes.map((note) => {
                     return (
                         <>
                         <section className="w-[50%] flex flex-col p-2 rounded-lg bg-[var(--third)]">
