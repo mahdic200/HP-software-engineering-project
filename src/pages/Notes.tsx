@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { setDocTitle } from "@/utils/Helpers";
 import { Children, useState } from "react";
-import { getLocalItem, removeLocalItem, setLocalItem } from "@/utils/LocalStorage";
+import { getLocalItem, setLocalItem } from "@/utils/LocalStorage";
 import { isEmpty } from "@/utils/Empty";
 import NoteInterface from "@/interfaces/NoteInterface";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,14 +28,14 @@ function Notes() {
     const { errors } = formState;
 
     const handleSave = (formValues: any) => {
-        let notes_object: NoteInterface[] = getLocalItem("notes", true);
+        let notes_object: NoteInterface[] = JSON.parse(localStorage.getItem("notes")!);
         notes_object = isEmpty(notes_object) ? [] : notes_object;
-        formValues.id = getRandomInt(1000, 100000);
+        let id = getRandomInt(1000, 100000);
         notes_object.push({
-            id: formValues.id,
-            ...formValues
+            id: id + "",
+            body: formValues.body
         });
-        setLocalItem("notes", notes_object, true);
+        localStorage.setItem("notes", JSON.stringify(notes_object))
         setNotes(notes_object);
     }
 
@@ -47,15 +47,11 @@ function Notes() {
 
     const delete_note = (number: string) => {
         let notes_object = notes?.filter((note) => {
-            if (note.id === number) {
-                return false;
-            } else {
-                return true;
-            }
+            return note.id !== number;
         });
         setLocalItem("notes", notes_object, true)
         if (isEmpty(notes_object)) {
-            removeLocalItem("notes");
+            localStorage.removeItem('notes');
         }
         notes_object = notes_object == undefined ? [] : notes_object;
         setNotes(notes_object);

@@ -29,13 +29,11 @@ function DateTransform() {
     const { errors } = formState;
 
     const handleSave = (formValues: any) => {
-        console.log(formValues.date);
-        console.log((new Date(formValues.date)).toDateString());
         let date = new Date(formValues.date);
-        if (formValues.type == 'g_p') {
+        if (trType == 'g_p') {
             setDate(date.toLocaleDateString('fa-IR'));
         }
-        else if (formValues.type == 'p_g') {
+        else if (trType == 'p_g') {
             setDate(date.toLocaleDateString('en-US'));
         }
     }
