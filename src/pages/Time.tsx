@@ -1,9 +1,19 @@
 import { setDocTitle } from "@/utils/Helpers";
+import { useEffect, useState } from "react";
 
 function Time() {
     setDocTitle("ساعت جهانی")
+    const [s, setS] = useState(false);
 
-    const date = new Date((new Date()).toUTCString());
+    var x: any;
+    useEffect(() => {
+        x = setInterval(() => setS(!s), 1000);
+        return () => {
+            clearInterval(x);
+        }
+    }, [s]);
+
+    const date = new Date();
     return (
         <>
         <section className="flex justify-center items-center">
